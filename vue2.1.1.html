@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vue3 Demo</title>
+    <script src="https://unpkg.com/vue@next"></script>
+    <style>
+        #h1 {
+            color: blueviolet;
+        }
+    </style>
+</head>
+
+<body>
+    <div style="text-align: center;" id="Application">
+        <h1>{{ count }}</h1>
+        <h2 v-once>只渲染一次 {{ count }}</h2>
+        <h2 v-once>这里是模板的内容: <span v-html="countHTML"></span></h2>
+        <h2 v-bind:id="id1">这里是模板的内容: <span v-html="countHTML"></span></h2>
+        <h2 v-bind:id="id1">这里是模板的内容，以JavaScript的表达式形式: {{ count + 10}}</h2>
+        <button v-on:click="clickButton">点击</button>
+    </div>
+    <script>
+        const App = {
+            data() {
+                return {
+                    count: 0,
+                    countHTML: "<span style='color:red'>0</span>",
+                    id1: "h1"
+                }
+            },
+            methods: {
+                clickButton() {
+                    this.count = this.count + 1
+                }
+            }
+        }
+        Vue.createApp(App).mount("#Application")
+    </script>
+</body>
+
+</html>
