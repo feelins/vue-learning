@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vue3 Demo - 2.1.2</title>
+    <script src="https://unpkg.com/vue@next"></script>
+    <style>
+        div {
+            width: 400px;
+            background-color: darksalmon;
+            margin: auto;
+        }
+
+        #h1 {
+            color: red;
+        }
+
+        #h2 {
+            color: cyan;
+        }
+
+        .h1 {
+            color: blue;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="Application">
+        <h1 v-bind:[prop]="name" v-if="show">标题</h1>
+        <h2 :id="name">标题2</h2>
+        <input v-model.trim="content">
+        <button @click="click">点击</button>
+    </div>
+    <script>
+        const App = {
+            data() {
+                return {
+                    show: true,
+                    prop: "class",
+                    name: "h1"
+                }
+            },
+            methods: {
+                click() {
+                    this.name = "h2"
+                }
+            }
+        }
+        Vue.createApp(App).mount("#Application")
+    </script>
+</body>
+
+</html>

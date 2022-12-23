@@ -14,4 +14,6 @@
 * 2.1.1 了解模板插值
   * [vue2.1.1.html](vue2.1.1.html)
   * 了解插值一次的v-once，HTML插值v-html，以及属性值绑定v-bind；
-  
+* 2.1.2 了解模板指令
+  * [vue2.1.2.html](vue2.1.2.html)
+  * 了解指令增加参数，指令修饰符，v-bind, v-on的简写: @；
