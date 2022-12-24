@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vue3 Demo - 2.2.1</title>
+    <script src="https://unpkg.com/vue@next"></script>
+    <style>
+        div {
+            width: 400px;
+            background-color: darksalmon;
+            margin: auto;
+        }
+
+        #h1 {
+            color: red;
+        }
+
+        #h2 {
+            color: cyan;
+        }
+
+        .h1 {
+            color: blue;
+        }
+
+        .d2 {
+            width: 300px;
+            background-color: aquamarine;
+            margin: auto;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="Application">
+        <h1 v-if="show">标题</h1>
+        <h2>hello</h2>
+        <p v-else>如果不显示标题</p>
+        <p>以上片段在书里写的会在code里报错，其实并不是？？</p>
+        <h1 v-if="mark == 100">满分</h1>
+        <h1 v-else-if="mark > 60">及格</h1>
+        <h1 v-else>不及格</h1>
+        <div class="d2" v-if="show">
+            <p>得分</p>
+            <p>得分</p>
+            <p>得分</p>
+        </div>
+        <template v-if="show">
+            <p>内容</p>
+            <p>内容</p>
+            <p>内容</p>
+        </template>
+    </div>
+
+    <script>
+        const App = {
+            data() {
+                return {
+                    show: true,
+                    mark: 100
+                }
+            }
+        }
+        Vue.createApp(App).mount("#Application")
+    </script>
+</body>
+
+</html>
