@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vue3 Demo - 3.4.4</title>
+    <script src="https://unpkg.com/vue@next"></script>
+    <style>
+        div {
+            width: 400px;
+            background-color: darkmagenta;
+            margin: auto;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="Application">
+        <select v-model="select">
+            <option>男</option>
+            <option>女</option>
+        </select>
+        <p>{{ select }}</p>
+        <select v-model="selectList" multiple>
+            <option>python</option>
+            <option>vue</option>
+            <option>HTML</option>
+        </select>
+        <p>{{ selectList }}</p>
+    </div>
+
+    <script>
+        const App = {
+            data() {
+                return {
+                    select: "",
+                    selectList: []
+                }
+            }
+        }
+        Vue.createApp(App).mount("#Application")
+    </script>
+</body>
+
+</html>

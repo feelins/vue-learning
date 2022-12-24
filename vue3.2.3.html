@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vue3 Demo - 3.2.3</title>
+    <script src="https://unpkg.com/vue@next"></script>
+    <style>
+        div {
+            width: 400px;
+            background-color: forestgreen;
+            margin: auto;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="Application">
+        <h1>{{ type }}</h1>
+        <h2>{{ count }}</h2>
+        <button @click="add">Add</button>
+    </div>
+
+    <script>
+        const App = {
+            data() {
+                return {
+                    count: 0
+                }
+            },
+            computed: {
+                type: {
+                    get() {
+                        return this.count > 10 ? "大数" : "小数"
+                    },
+                    set(newValue) {
+                        if (newValue == "大数") {
+                            this.count = 16
+                        } else {
+                            this.count = 0
+                        }
+                    }
+                }
+            },
+            methods: {
+                add() {
+                    this.count++
+                }
+            }
+        }
+        let instance = Vue.createApp(App).mount("#Application")
+        console.log(instance.type)
+        instance.type = "大数"
+        console.log(instance.type)
+    </script>
+</body>
+
+</html>

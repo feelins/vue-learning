@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vue3 Demo - 3.1.1</title>
+    <script src="https://unpkg.com/vue@next"></script>
+    <style>
+        div {
+            width: 400px;
+            background-color: darkgoldenrod;
+            margin: auto;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="Application">
+        {{ count }}
+    </div>
+
+    <script>
+        const App = {
+            data() {
+                return {
+                    count: 9
+                }
+            }
+        }
+        let instance = Vue.createApp(App).mount("#Application")
+        console.log("first " + instance.count)
+        console.log(instance.$data.count)
+        instance.count = 5
+        console.log("first " + instance.count)
+        console.log(instance.$data.count)
+    </script>
+</body>
+
+</html>
