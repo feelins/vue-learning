@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vue3 Demo - 2.3.1</title>
+    <script src="https://unpkg.com/vue@next"></script>
+    <style>
+        div {
+            width: 400px;
+            background-color: darksalmon;
+            margin: auto;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="Application">
+        <h1 v-for="item in list">{{ item }}</h1>
+        <h1 v-for="(item, index) in names">{{ index + "." + item.name + "-" + item.age }}</h1>
+        <ul v-for="item in names">
+            <li>{{ item.name }}</li>
+        </ul>
+    </div>
+
+    <script>
+        const App = {
+            data() {
+                return {
+                    list: [1, 2, 3, 4, 5],
+                    names: [
+                        {
+                            name: "Tom",
+                            age: 8
+                        },
+                        {
+                            name: "Jerry",
+                            age: 7
+                        },
+                        {
+                            name: "Mary",
+                            age: 10
+                        },
+                        {
+                            name: "Stephen",
+                            age: 10
+                        },
+                    ]
+                }
+            }
+        }
+        Vue.createApp(App).mount("#Application")
+    </script>
+</body>
+
+</html>
