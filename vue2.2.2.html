@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vue3 Demo - 2.2.2</title>
+    <script src="https://unpkg.com/vue@next"></script>
+    <style>
+        div {
+            width: 400px;
+            background-color: darksalmon;
+            margin: auto;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="Application">
+        <h1 v-if="show">标题</h1>
+        <h1 v-show="show">v-show的标题在这里</h1>
+    </div>
+
+    <script>
+        const App = {
+            data() {
+                return {
+                    show: true
+                }
+            }
+        }
+        Vue.createApp(App).mount("#Application")
+    </script>
+</body>
+
+</html>
