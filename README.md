@@ -131,3 +131,4 @@
   * [vue3.6.1.html](vue3.6.1.html)
   * 部分渲染的练习；
   * 检查用户名，密码，邮箱；
+  <img decoding="async" src="./images/3.6.1.png" width="50%">
