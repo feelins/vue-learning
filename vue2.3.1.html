@@ -23,6 +23,9 @@
         <ul v-for="item in names">
             <li>{{ item.name }}</li>
         </ul>
+        <ol v-for="(value, key, index) in person">
+            <li>{{ key }} : {{ value }}</li>
+        </ol>
     </div>
 
     <script>
@@ -47,7 +50,12 @@
                             name: "Stephen",
                             age: 10
                         },
-                    ]
+                    ],
+                    person: {
+                        name: "Tom",
+                        age: 17,
+                        school: "ABC"
+                    }
                 }
             }
         }

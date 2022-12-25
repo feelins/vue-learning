@@ -36,7 +36,17 @@
 * 2.3.1 v-for指令的使用方法
   * [vue2.3.1.html](vue2.3.1.html)
   * v-for可针对列表，也可针对对象列表，可获取到索引；
-  * 也可以对一个Javascript对象进行遍历，此处未成功，不会用？？？
+  * 也可以对一个Javascript对象进行遍历，此处未成功，不会用？？？---解决，如下person定义
+  ```html
+  return {
+                    list: [1, 2, 3, 4, 5],
+                    person: {
+                        name: "Tom",
+                        age: 17,
+                        school: "ABC"
+                    }
+                }
+  ```
 * 2.3.2 v-for指令的高级用法
   * [vue2.3.2.html](vue2.3.2.html)
   * 对列表可进行一系列操作，排序，反序，追加，删除元素等；
