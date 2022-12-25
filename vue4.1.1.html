@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vue3 Demo - 4.1.1</title>
+    <script src="https://unpkg.com/vue@next"></script>
+</head>
+
+<body>
+    <div style="text-align: center;" id="Application">
+        <h1>点击次数：{{ count }}</h1>
+        <button @click="click">点击</button>
+        <h1>点击次数：{{ count }}</h1>
+        <button @click="this.count += 1">点击</button>
+        <h1>点击次数：{{ count }}</h1>
+        <button @click="click2(2)">点击</button>
+    </div>
+    <script>
+        const App = {
+            data() {
+                return {
+                    count: 0
+                }
+            },
+            methods: {
+                click(event) {
+                    console.log(event)
+                    this.count = this.count + 1
+                },
+                click2(step) {
+                    console.log(event)
+                    this.count = this.count + step
+                }
+            }
+        }
+        Vue.createApp(App).mount("#Application")
+    </script>
+</body>
+
+</html>
