@@ -119,3 +119,11 @@
 * 3.4.5 两个常用的修饰符
   * [vue3.4.5.html](vue3.4.5.html)
   * 使用lazy修饰符，相当于懒加载，一直等到该文本框失去焦点时开始加载；trim是去首尾的空格符；
+* 3.5.1 为HTML标签绑定class属性
+  * [vue3.5.1.html](vue3.5.1.html)
+  * <div :class="{blue:isBlue, red:isRed}">根据属性的值变化；
+  * <div :class="style">可将其设置为一个vue组件中的数据对象；
+  * <div :class="[redClass, fontClass]">还支持使用数组对象控制class属性；
+* 3.5.2 绑定内联样式
+  * [vue3.5.2.html](vue3.5.2.html)
+  * 通过内置的style属性来设置样式，内联CSS属性用的是驼峰式，fontSize；
