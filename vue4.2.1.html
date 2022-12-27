@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vue3 Demo - 4.2.1</title>
+    <script src="https://unpkg.com/vue@next"></script>
+    <style>
+        div.mark {
+            background-color: aquamarine;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <div style="text-align: center;" id="Application">
+        <h1>{{ label }}</h1>
+        <div @click="click" class="mark">单击事件</div>
+        <div @dblclick="dblclick" class="mark">双击事件</div>
+        <div class="mark">
+            <input @focus="focus" @blur="blur" @change="change" @select="select">
+        </div>
+        <div @mousedown="mousedown" class="mark">鼠标按下</div>
+    </div>
+    <script>
+        const App = {
+            data() {
+                return {
+                    label: "没有响应"
+                }
+            },
+            methods: {
+                click() {
+                    console.log("单击事件");
+                    this.label = "单击事件"
+                },
+                dblclick() {
+                    console.log("双击事件");
+                    this.label = "双击事件"
+                },
+                focus() {
+                    console.log("焦点");
+                    this.label = "获取焦点"
+                },
+                blur() {
+                    console.log("失去焦点");
+                    this.label = "失去焦点"
+                },
+                change() {
+                    console.log("内容变化");
+                    this.label = "内容变化"
+                },
+                select() {
+                    console.log("内容选中");
+                    this.label = "内容选中"
+                },
+                mousedown() {
+                    console.log("鼠标按下");
+                    this.label = "鼠标按下"
+                }
+            }
+        }
+        Vue.createApp(App).mount("#Application")
+    </script>
+</body>
+
+</html>
