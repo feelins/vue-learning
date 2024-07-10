@@ -2,7 +2,7 @@
   <nav>
     <router-link to="/">主页</router-link> |
     <router-link to="/css-selector">CSS Selectors</router-link> |
-    <router-link to="/about">未来</router-link> |
+    <router-link to="/css-box">CSS Box</router-link> |
     <router-link to="/about">关于</router-link>
   </nav>
   <router-view/>
